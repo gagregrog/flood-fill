@@ -1,28 +1,27 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, createContext, useMemo } from 'react'
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
-    );
-  }
+import './App.css'
+import Board from './Board'
+
+import { blankBoard } from './lib/floodFill'
+
+const Context = createContext([])
+
+const App = () => {
+  const [board, setBoard] = useState(blankBoard)
+  const itemsHandler = useMemo(() => ({
+    board,
+    setBoard,
+  }), [board])
+
+  return (
+    <div className="App">
+      <Context.Provider value={itemsHandler}>
+        <Board />
+      </Context.Provider>
+    </div>
+  )
 }
 
-export default App;
+export default App
+export const ItemsContext = Context;
