@@ -4,19 +4,11 @@ import PropTypes from 'prop-types'
 import { ItemsContext } from './App'
 import { handleFloodFill } from './lib/floodFill'
 
-const BoardItem = ({ item, rowNum, colNum }) => {
+const BoardItem = ({ item }) => {
   const { setBoard, board } = useContext(ItemsContext)
 
-  const itemProps = useMemo(() => ({
-    color: item.color,
-    position: {
-      x: colNum,
-      y: rowNum,
-    },
-  }), [item, rowNum, colNum])
-
   const handleClick = useCallback(() => {
-    setBoard(handleFloodFill(board, itemProps))
+    setBoard(handleFloodFill(board, item))
   })
 
   return (
@@ -53,8 +45,6 @@ const BoardItem = ({ item, rowNum, colNum }) => {
 
 BoardItem.propTypes = {
   item: PropTypes.object.isRequired,
-  rowNum: PropTypes.number.isRequired,
-  colNum: PropTypes.number.isRequired,
 }
 
 export default BoardItem

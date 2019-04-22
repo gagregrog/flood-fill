@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 
 import BoardItem from './BoardItem'
 
-const BoardRow = ({ boardRow, rowNum }) => {
+const BoardRow = ({ boardRow }) => {
 
   return (
     <div style={{
@@ -14,7 +14,7 @@ const BoardRow = ({ boardRow, rowNum }) => {
     }}>
       {
         boardRow.map((item, i) => (
-          <BoardItem key={i} item={item} rowNum={rowNum} colNum={i} />
+          <BoardItem key={i} item={item} />
         ))
       }
     </div>
@@ -23,7 +23,6 @@ const BoardRow = ({ boardRow, rowNum }) => {
 
 BoardRow.propTypes = {
   boardRow: PropTypes.array.isRequired,
-  rowNum: PropTypes.number.isRequired,
 }
 
 export default BoardRow

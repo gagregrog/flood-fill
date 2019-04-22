@@ -21,7 +21,6 @@ const Board = () => {
           <BoardRow
             key={i}
             boardRow={boardRow}
-            rowNum={i}
           />
         ))
       }

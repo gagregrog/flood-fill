@@ -11,8 +11,10 @@ const getRandomColor = () => {
   return colors[random]
 }
 
-const getRandomColorObj = () => ({
+const getRandomColorObj = (x, y) => ({
   color: getRandomColor(),
+  x,
+  y,
 })
 
 const gridDim = 10
@@ -21,9 +23,9 @@ const boardHeight = gridDim
 
 export const blankBoard = Array.from(
   { length: boardHeight },
-  () => Array.from(
+  (a, y) => Array.from(
     { length: boardWidth },
-    getRandomColorObj
+    (b, x) => getRandomColorObj(x, y)
   )
 )
 
