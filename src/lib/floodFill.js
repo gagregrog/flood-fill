@@ -1,3 +1,5 @@
+import floodFillSolution from './solution'
+
 const colors = [
   'red',
   'blue',
@@ -29,6 +31,8 @@ export const blankBoard = Array.from(
   )
 )
 
-export const handleFloodFill = (board, clickedItem) => {
+const defaultFloodFill = (board, clickedItem) => {
   return board.map((row) => row.map((item) => ({ ...item, color: clickedItem.color })))
 }
+
+export const handleFloodFill = floodFillSolution || defaultFloodFill
