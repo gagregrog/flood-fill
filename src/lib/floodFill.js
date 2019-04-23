@@ -1,10 +1,5 @@
-import floodFillSolution from './solution'
-
-const colors = [
-  'red',
-  'blue',
-  'yellow',
-]
+import floodFillSolution from './_solution'
+import { colors, boardWidth, boardHeight } from './constants'
 
 const getRandomColor = () => {
   const max = colors.length
@@ -18,10 +13,6 @@ const getRandomColorObj = (x, y) => ({
   x,
   y,
 })
-
-const gridDim = 10
-const boardWidth = gridDim
-const boardHeight = gridDim
 
 export const blankBoard = Array.from(
   { length: boardHeight },

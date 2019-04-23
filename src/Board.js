@@ -9,11 +9,12 @@ const Board = () => {
   return (
     <div
       style={{
-        display: 'flex',
+        width: '100%',
+        height: '100%',
+        display: 'flex',  
+        overflow: 'scroll',
         flexDirection: 'column',
         justifyContent: 'space-around',
-        width: '90vw',
-        height: '90vh',
       }}
     >
       {
