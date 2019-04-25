@@ -1,4 +1,4 @@
-import floodFillSolution from './_solution'
+import floodFillSolution from './solution'
 import { colors, boardWidth, boardHeight } from './constants'
 
 const getRandomColor = () => {
