@@ -11,6 +11,9 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "start-py": "REACT_APP_WITH_PYTHON=TRUE react-scripts start",
+    "setup-py": "pip install -r ./python/requirements.txt",
+    "start-api": "python ./python/api.py",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"

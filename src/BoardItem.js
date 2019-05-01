@@ -3,15 +3,18 @@ import PropTypes from 'prop-types'
 
 import { ItemsContext } from './App'
 import { debug } from './lib/constants'
-import { handleFloodFill } from './lib/floodFill'
+import { handleFloodFillAsync } from './lib/floodFill'
 
 const BoardItem = ({ item }) => {
   const { setBoard, board } = useContext(ItemsContext)
 
-  const handleClick = useCallback(() => {
+  const handleClick = useCallback(async () => {
     if (!item.color) return;
 
-    setBoard(handleFloodFill(board, item))
+
+    const updatedBoard = await handleFloodFillAsync(board, item)
+
+    setBoard(updatedBoard)
   }, [board, setBoard, item])
 
   return (
