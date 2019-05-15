@@ -113,7 +113,7 @@ The scorecard should keep track of the fill that colored the most rectangles.
 
 When a rectangle is clicked, the number of rectangles filled will be calculated. 
 
-Its value can be *consumed* from the *context* exported from `src/context/BoardContext.js` as `lastFill`.
+Its value can be *consumed* from the `BoardContext` which is a named export from `src/context/BoardContext.js`. The context provides an object with key `lastFill` which will be the number filled on the previous click.
 
 ### Task 3: Wrap 'em Up
 

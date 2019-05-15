@@ -2,11 +2,11 @@ import PropTypes from 'prop-types'
 import React, { useCallback, useContext } from 'react'
 
 import { debug } from '../lib/constants'
-import { ItemsContext } from '../context/BoardContext'
+import { BoardContext } from '../context/BoardContext'
 import { handleFloodFillAsync } from '../lib/floodFill'
 
 const BoardItem = ({ item }) => {
-  const { setBoard, board } = useContext(ItemsContext)
+  const { setBoard, board } = useContext(BoardContext)
 
   const handleClick = useCallback(async () => {
     if (!item.color) return;

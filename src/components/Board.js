@@ -1,11 +1,11 @@
 import React, { useContext } from 'react'
 
 import BoardRow from './BoardRow'
-import { ItemsContext } from '../context/BoardContext'
+import { BoardContext } from '../context/BoardContext'
 import { headerHeight } from '../lib/constants'
 
 const Board = () => {
-  const { board } = useContext(ItemsContext)
+  const { board } = useContext(BoardContext)
 
   return (
     <div

@@ -4,7 +4,7 @@ import { blankBoard } from '../lib/floodFill'
 
 const nullContext = { board: blankBoard, setBoard: () => {} }
 
-export const ItemsContext = createContext(nullContext)
+export const BoardContext = createContext(nullContext)
 
 const BoardProvider = ({ children }) => {
   const [board, setBoard] = useState(blankBoard)
@@ -30,9 +30,9 @@ const BoardProvider = ({ children }) => {
   }), [board, lastFill, handleUpdateBoard])
 
   return (
-    <ItemsContext.Provider value={itemsHandler}>
+    <BoardContext.Provider value={itemsHandler}>
       { children }
-    </ItemsContext.Provider>
+    </BoardContext.Provider>
   )
 }
 
