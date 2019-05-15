@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "hex2rgb": "^2.2.0",
     "randomcolor": "^0.5.4",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
@@ -11,6 +12,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "start-alg": "REACT_APP_WITH_SOLUTION=TRUE react-scripts start",
     "start-py": "REACT_APP_WITH_PYTHON=TRUE react-scripts start",
     "setup-py": "pip install -r ./python/requirements.txt",
     "start-api": "python ./python/api.py",

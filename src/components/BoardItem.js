@@ -1,9 +1,9 @@
-import React, { useCallback, useContext } from 'react'
 import PropTypes from 'prop-types'
+import React, { useCallback, useContext } from 'react'
 
-import { ItemsContext } from './App'
-import { debug } from './lib/constants'
-import { handleFloodFillAsync } from './lib/floodFill'
+import { debug } from '../lib/constants'
+import { ItemsContext } from '../context/BoardContext'
+import { handleFloodFillAsync } from '../lib/floodFill'
 
 const BoardItem = ({ item }) => {
   const { setBoard, board } = useContext(ItemsContext)

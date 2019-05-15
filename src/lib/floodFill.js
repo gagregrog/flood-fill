@@ -1,4 +1,5 @@
-import floodFillJs from './solution'
+import floodFillInterviewee from './solution'
+import floodFillMin from './solution.min.js'
 import { colors, boardWidth, boardHeight } from './constants'
 
 const getRandomColor = () => {
@@ -17,11 +18,6 @@ export const blankBoard = Array.from(
     (b, x) => getRandomColorObj(x, y)
   )
 )
-
-// eslint-disable-next-line
-const defaultFloodFill = (board, clickedItem) => {
-  return board.map((row) => row.map((item) => ({ ...item, color: clickedItem.color })))
-}
 
 const floodFillApi = async (board, clickedItem) => {
   console.log('Sending request to API...')
@@ -47,19 +43,25 @@ const floodFillApi = async (board, clickedItem) => {
       e.message += '.\n\nEnsure that your python server is running.'
     }
 
-    window.alert(e.message);
-    console.error(e.message);
+    window.alert(e.message)
+    console.error(e.message)
     
-    return board;
+    return board
   }
 }
+
+const floodFillJs = (
+  process.env.REACT_APP_WITH_SOLUTION
+    ? floodFillMin
+    : floodFillInterviewee
+)
 
 const floodFillProm = async (board, clickedItem) => {
   const updatedBoard = floodFillJs(board, clickedItem)
   if (!Array.isArray(updatedBoard)) {
     const message = 'There was an error with your algorithm.'
-    window.alert(message);
-    console.error(message);
+    window.alert(message)
+    console.error(message)
 
     return board
   }

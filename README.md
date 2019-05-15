@@ -36,9 +36,11 @@ After cloning the repository, change into the directory and install the dependen
 
 Once the dependencies have been installed, you can start the project.
 
-  - If you will be providing your solution in JavaScript, run `npm start`.
+  - If you will be providing your algorithm solution in JavaScript, run `npm start`.
 
-  - If you will be providing your solution in python, run `npm run start-py`.
+  - If you will be providing your algorithm solution in python, run `npm run start-py`.
+
+  - If you will be solving the react portion only, run `npm run start-alg`. This will start the project with the algorithm already implemented.
 
 Open [http://localhost:3000](http://localhost:3000) to view the page in the browser.
 
@@ -54,9 +56,9 @@ From a new terminal tab, ensure you have activated your virtual environment, the
 
 Once the dependencies have been installed, run `npm run start-api`.
 
-## Your Task
+## Algorithm Challenge
 
-Your task is to implement the _Flood_ _Fill_ algorithm that will color the rectangles.
+To complete this task, implement the _Flood_ _Fill_ algorithm that will color the rectangles.
 
 If your solution will be written in JavaScript, open up `src/lib/solution.js` and implement your solution inside the _default_ _export_.
 
@@ -83,6 +85,42 @@ If an item is part of the flood fill, you should return `null`/`None` for its `c
 
 The `clickedItem` that is passed to the function will be of the same *shape* as the other items on the board, but will include the color and coordinates of the clicked item.
 
-You may use any resources at your disposal, and should feel free to ask questions. 
+You may use any resources at your disposal, and should feel free to ask questions.
 
 You are encouraged to explain your thinking as you work through a solution.
+
+## Frontend Challenge
+
+Are you a frontend dev? Do you know react?
+
+*Great!*
+
+Head to the folder `src/components/solution`, where you will find three files.
+
+### Task 1: Implement a Timer
+
+Open up `src/components/solution/Timer.js` and implement a Timer component.
+
+Your component should start timing when the page loads, and continue timing until the board has been completely filled.
+
+It should display the elapsed time in minutes:seconds:milliseconds.
+
+### Task 2: Implement a Scorecard
+
+Open up `src/components/solution/Score.js` and implement a Scorecard component.
+
+The scorecard should keep track of the fill that colored the most rectangles.
+
+When a rectangle is clicked, the number of rectangles filled will be calculated. 
+
+Its value can be *consumed* from the *context* exported from `src/context/BoardContext.js` as `lastFill`.
+
+### Task 3: Wrap 'em Up
+
+Import the Timer and Score components into `src/components/solution/Stats.js`.
+
+Create a Stats component that will display the Score and Timer and render their output to the screen.
+
+Anything rendered from the Stats component will be displayed in the header.
+
+You should feel free to architect and style your components however you see fit, and may use any resources at your disposal.

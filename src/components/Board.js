@@ -1,7 +1,8 @@
 import React, { useContext } from 'react'
 
 import BoardRow from './BoardRow'
-import { ItemsContext } from './App'
+import { ItemsContext } from '../context/BoardContext'
+import { headerHeight } from '../lib/constants'
 
 const Board = () => {
   const { board } = useContext(ItemsContext)
@@ -9,8 +10,11 @@ const Board = () => {
   return (
     <div
       style={{
-        width: '100%',
-        height: '100%',
+        position: 'absolute',
+        top: headerHeight,
+        bottom: 0,
+        left: 0,
+        right: 0,
         display: 'flex',  
         overflow: 'scroll',
         flexDirection: 'column',
