@@ -91,13 +91,31 @@ You are encouraged to explain your thinking as you work through a solution.
 
 ## Frontend Challenge
 
-Are you a frontend dev? Do you know react?
+Your task is to implement a custom header as follows:
 
-*Great!*
+![Header](./flood-header.gif)
 
-Head to the folder `src/components/solution`, where you will find three files.
+Head to the folder `src/components/solution`, where you will find a few files.
 
-### Task 1: Implement a Timer
+You will have two main components to implement: `Score.js` and `Timer.js`, and one optional component, `Header.js`.
+
+You should feel free to architect and style your components however you see fit, and may use any resources at your disposal.
+
+### Task 1: Implement a Scorecard
+
+Open up `src/components/solution/Score.js` and implement a Scorecard component.
+
+The scorecard should keep track of the highest number of rectangles filled with a single click.
+
+When a rectangle is clicked, the number of rectangles filled will be automatically calculated. 
+
+Its value can be *consumed* from the `BoardContext` which is a named export from `src/context/BoardContext.js`. 
+
+The context provides an object with key `lastFill` which will be the number filled on the previous click.
+
+The provided object will also contain the key `numLeft` indicating the number of rectangles remaining. This should also be displayed.
+
+### Task 2: Implement a Timer
 
 Open up `src/components/solution/Timer.js` and implement a Timer component.
 
@@ -105,22 +123,9 @@ Your component should start timing when the page loads, and continue timing unti
 
 It should display the elapsed time in minutes:seconds:milliseconds.
 
-### Task 2: Implement a Scorecard
+### Task 3: Put it all Together (Optional)
 
-Open up `src/components/solution/Score.js` and implement a Scorecard component.
+By default, your components will be rendered to the header automatically.
 
-The scorecard should keep track of the fill that colored the most rectangles.
+If you would like more control over the rendering, you can implement your own custom header by importing your components into `src/components/solution/Header.js`.
 
-When a rectangle is clicked, the number of rectangles filled will be calculated. 
-
-Its value can be *consumed* from the `BoardContext` which is a named export from `src/context/BoardContext.js`. The context provides an object with key `lastFill` which will be the number filled on the previous click.
-
-### Task 3: Wrap 'em Up
-
-Import the Timer and Score components into `src/components/solution/Stats.js`.
-
-Create a Stats component that will display the Score and Timer and render their output to the screen.
-
-Anything rendered from the Stats component will be displayed in the header.
-
-You should feel free to architect and style your components however you see fit, and may use any resources at your disposal.

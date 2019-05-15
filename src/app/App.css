@@ -4,7 +4,7 @@ html {
 }
 
 .App {
-  font-family: 'Montserrat Alternates', sans-serif!important;
+  font-family: 'Nova Mono', monospace;
   position: fixed;
   top: 0;
   left: 0;

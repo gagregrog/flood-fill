@@ -23,4 +23,5 @@ yarn-debug.log*
 yarn-error.log*
 
 src/lib/_solution.js
+src/components/solution/_*
 python/__pycache__

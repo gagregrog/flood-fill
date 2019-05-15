@@ -19,6 +19,8 @@ export const blankBoard = Array.from(
   )
 )
 
+export const numRectangles = boardWidth * boardHeight
+
 const floodFillApi = async (board, clickedItem) => {
   console.log('Sending request to API...')
   const body = { board, clickedItem }
