@@ -8,7 +8,7 @@ import { bg, fg, headerHeight } from '../lib/constants'
 const Header = () => {
   const DefaultHeader = (
     <div style={{
-      maxWidth: 1260,
+      maxWidth: 1600,
       height: '100%',
       margin: '0 auto',
       padding: '0 25px',
