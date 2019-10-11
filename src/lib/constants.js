@@ -2,7 +2,7 @@ import hex2rgb from 'hex2rgb'
 import makeRandomColor from 'randomcolor'
 
 const gridDims = 15
-const numColors = 8
+const numColors = 4
 
 export const boardWidth = gridDims
 export const boardHeight = gridDims
