@@ -18,7 +18,8 @@ const Board = () => {
         display: 'flex',  
         overflow: 'scroll',
         flexDirection: 'column',
-        justifyContent: 'space-around'
+        justifyContent: 'space-around',
+        alignItems: 'center'
       }}
     >
       {
